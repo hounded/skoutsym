@@ -30,7 +30,17 @@
         "symfony/polyfill-apcu": "^1.0",
         "symfony/swiftmailer-bundle": "^2.3.10",
         "symfony/symfony": "3.3.*",
-        "twig/twig": "^1.0||^2.0"
+        "twig/twig": "^1.0||^2.0",
+
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "friendsofsymfony/jsrouting-bundle": "^1.6",
+        "knplabs/knp-menu-bundle": "~2",
+        "liip/imagine-bundle": "^1.3",
+        "braincrafted/bootstrap-bundle": "dev-master",
+        "fourlabs/xero-bundle": "^1.1",
+        "tecnickcom/tcpdf": "6.2.*",
+        "setasign/fpdi": "1.6.1"
+
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
