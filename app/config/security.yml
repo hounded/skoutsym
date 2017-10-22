@@ -22,7 +22,19 @@ security:
             security: false
 
         main:
-            anonymous: ~
+            pattern: ^/
+            form_login:
+                provider: fos_userbundle
+                csrf_token_generator: security.csrf.token_manager
+                default_target_path: fos_user_profile_show
+                require_previous_session: false
+            logout:     true
+            anonymous:  true
+            remember_me:
+                secret:   '%secret%'
+                lifetime: 15552000 # 1 week in seconds
+                path:     /
+                domain:   ~
             # activate different ways to authenticate
 
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
