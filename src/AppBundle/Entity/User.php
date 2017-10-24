@@ -25,6 +25,27 @@ class User extends BaseUser
      */
     protected $id;
 
+    /**
+     * @ORM\Column(type="float",nullable=true)
+     *
+     * @var string
+     */
+    private $height;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     *
+     * @var string
+     */
+    private $age;
+
+    /**
+     * @ORM\Column(type="float",nullable=true)
+     *
+     * @var string
+     */
+    private $weight;
+
 
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
@@ -143,5 +164,101 @@ class User extends BaseUser
     public function getImageSize()
     {
         return $this->imageSize;
+    }
+
+    /**
+     * Set height
+     *
+     * @param float $height
+     *
+     * @return User
+     */
+    public function setHeight($height)
+    {
+        $this->height = $height;
+
+        return $this;
+    }
+
+    /**
+     * Get height
+     *
+     * @return float
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * Set age
+     *
+     * @param integer $age
+     *
+     * @return User
+     */
+    public function setAge($age)
+    {
+        $this->age = $age;
+
+        return $this;
+    }
+
+    /**
+     * Get age
+     *
+     * @return integer
+     */
+    public function getAge()
+    {
+        return $this->age;
+    }
+
+    /**
+     * Set weight
+     *
+     * @param float $weight
+     *
+     * @return User
+     */
+    public function setWeight($weight)
+    {
+        $this->weight = $weight;
+
+        return $this;
+    }
+
+    /**
+     * Get weight
+     *
+     * @return float
+     */
+    public function getWeight()
+    {
+        return $this->weight;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return User
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
     }
 }
