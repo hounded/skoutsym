@@ -1,23 +1,78 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-{% if error %}
-    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-{% endif %}
 
-<form action="{{ path("fos_user_security_check") }}" method="post">
-    {% if csrf_token %}
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-    {% endif %}
 
-    <label for="username">{{ 'security.login.username'|trans }}</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
 
-    <label for="password">{{ 'security.login.password'|trans }}</label>
-    <input type="password" id="password" name="_password" required="required" />
 
-    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-    <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+<!--Page Container-->
+<div class="container">
 
-    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
-</form>
+    <div class="login">
 
+        <!--CSS Grid for Login form layout-->
+        <div class="grid">
+
+            <div id="topBar">
+                <img src="{{ asset('bundles/app/imgs/skout.png') }}" width="100" style="margin:5px">
+            </div>
+
+            {% if error %}
+                <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+
+            <form action="{{ path("fos_user_security_check") }}" method="post">
+                {% if csrf_token %}
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                {% endif %}
+                <div class="input-field" id="firstNameField">
+                    <label for="username">{{ 'security.login.username'|trans }}</label>
+                    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+                </div>
+                <div class="input-field" id="passwordField">
+                    <label for="password">{{ 'security.login.password'|trans }}</label>
+                    <input type="password" id="password" name="_password" required="required" />
+                </div>
+
+                <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+
+                <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+            </form>
+            {##}
+            {#<div class="input-field" id="firstNameField">#}
+                {#<input id="first_name" type="text" class="validate">#}
+                {#<label for="first_name">First Name</label>#}
+            {#</div>#}
+
+            {#<div class="input-field" id="lastNameField">#}
+                {#<input id="last_name" type="text" class="validate">#}
+                {#<label for="last_name">Last Name</label>#}
+            {#</div>#}
+
+            {#<div class="input-field" id="emailField">#}
+                {#<input id="email" type="email" class="validate">#}
+                {#<label for="email">Email</label>#}
+            {#</div>#}
+
+            {#<div class="input-field" id="passwordField">#}
+                {#<input id="password" type="password" class="validate">#}
+                {#<label for="password">Password</label>#}
+            {#</div>#}
+
+            {#<div class="input-field" id="sportField">#}
+                {#<select>#}
+                    {#<option value="" disabled selected>Choose your sport</option>#}
+                    {#<option value="1">Rugby</option>#}
+                    {#<option value="2">Netball</option>#}
+                    {#<option value="3">Basketball</option>#}
+                {#</select>#}
+            {#</div>#}
+
+
+
+        </div>
+        <!--END CSS Grid-->
+
+    </div>
+
+</div>

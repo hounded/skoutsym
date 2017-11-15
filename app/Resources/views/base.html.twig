@@ -3,11 +3,22 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block head %}
+            <link rel="stylesheet" href="{{ asset('bundles/app/css/materialize.css') }}" />
+            <link rel="stylesheet" href="{{ asset('bundles/app/css/login-style.css') }}" />
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% block head_extra %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block body %}
+
+        {% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('bundles/app/js/jquery-3.2.1.js') }}"></script>
+            <script src="{{ asset('bundles/app/js/materialize.js') }}"></script>
+        {% endblock %}
+        {% block javascripts_extra %}
+        {% endblock %}
     </body>
 </html>
