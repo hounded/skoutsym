@@ -4,5 +4,5 @@
     <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
     <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
 
-    <img src="{{ vich_uploader_asset(User, 'imageName') }}" alt="" />
+    <img src="{{ vich_uploader_asset(user, 'imageFile') }}"  />
 </div>

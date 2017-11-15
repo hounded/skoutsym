@@ -15,4 +15,15 @@ class DefaultController extends Controller
     {
         return $this->redirectToRoute('fos_user_security_login');
     }
+
+    /**
+     * @Route("/image", name="image")
+     */
+    public function imageAction(Request $request)
+    {
+        $user = $this->getDoctrine()->getManager()->getRepository('AppBundle:User')->find(1);
+        return $this->render('default/image.html.twig',array(
+            'user'=>$user
+        ));
+    }
 }

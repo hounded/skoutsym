@@ -1,0 +1,6 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ dump(user) }}
+    <img src="{{ vich_uploader_asset(user, 'imageFile') }}"  />
+{% endblock %}

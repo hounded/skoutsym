@@ -86,12 +86,10 @@ fos_user:
 
 vich_uploader:
     db_driver: orm
-
     mappings:
         users_profile:
             uri_prefix:         /images/users
             upload_destination: '%kernel.root_dir%/../web/images/users'
-
-            inject_on_load:     false
+            inject_on_load:     true
             delete_on_update:   true
             delete_on_remove:   true
